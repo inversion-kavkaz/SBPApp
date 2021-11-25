@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:foregroundTint="@color/black"
+    tools:context=".fragments.ConnectTerminalFragmen">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cvHeader"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:paddingBottom="5dp"
+            android:theme="@style/Theme.MaterialComponents.DayNight"
+            app:cardBackgroundColor="@color/primaryDarkColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:strokeWidth="2dp">
+
+            <TextView
+                android:id="@+id/tvCustomerHeaderText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:text='ООО "Ромашка"'
+                android:textColor="@color/primaryTextColor"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="8dp"
+                android:text="@string/back_charester"
+                android:textColor="@color/primaryTextColor"
+                android:textSize="34sp"
+                android:textStyle="bold" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            app:cardBackgroundColor="@color/white"
+            app:contentPadding="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cvHeader">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Подключение QR - терминала"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <Spinner
+                    android:id="@+id/spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:backgroundTint="@android:color/darker_gray"
+                    android:contentDescription="spin"
+                    android:minHeight="48dp"
+                    android:popupBackground="@color/secondaryLightColor"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView14"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:text="Банк, где у вас открыт расчетный счет  с привязанным к нему мерчант аккаунтом"
+                    android:textAlignment="center"
+                    android:textColor="@color/secondaryTextColor"
+                    android:textSize="20sp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/customerPIN"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textColorHint="@color/secondaryTextColor"
+                    app:passwordToggleEnabled="true"
+                    app:passwordToggleTint="@color/secondaryTextColor">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/inputMerchantID"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:backgroundTint="@color/secondaryTextColor"
+                        android:foregroundTint="@color/secondaryTextColor"
+                        android:hint="Merchant ID"
+                        android:inputType="numberPassword"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:textColorHighlight="@color/color_accent"
+                        android:textColorHint="@color/secondaryTextColor"
+                        android:textColorLink="@color/color_accent"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/textView15"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="4dp"
+                    android:text="Данный цифро-буквенный ID Вы получили в Вашем банке, чтобы принимать безналичные платежи"
+                    android:textAlignment="center"
+                    android:textColor="@color/secondaryTextColor"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btNext"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_margin="4dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:backgroundTint="@android:color/transparent"
+            android:gravity="center"
+            android:text="Подключить"
+            android:textColor="@color/primaryLightColor"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:theme="@style/Theme.MaterialComponents"
+            app:cornerRadius="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView2"
+            app:strokeColor="@color/secondaryLightColor"
+            app:strokeWidth="2dp" />
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="В нашем приложении мы не регистрируем QR-терминалы, а только отправляем заявку в банк. Он свяжется с вами в ближайшее время . У нас вы можете отслеживать статус заявки на QR-терминал и работать с ним в дальнейшем."
+            android:textAlignment="center"
+            android:textColor="@color/secondaryTextColor"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btNext" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

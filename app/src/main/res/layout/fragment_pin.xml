@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/PinFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.PinFragment">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cvChangeEmployee"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="4dp"
+            android:theme="@style/Theme.MaterialComponents.DayNight"
+            app:cardCornerRadius="15dp"
+            app:contentPaddingBottom="8dp"
+            app:strokeColor="@color/primaryDarkColor"
+            app:strokeWidth="2dp">
+
+            <ImageView
+                android:id="@+id/ivEmployee"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:scaleX="1.5"
+                android:scaleY="1.5"
+                android:src="@drawable/ic_avatar" />
+
+            <TextView
+                android:id="@+id/Employee"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginTop="15dp"
+                android:gravity="center_vertical"
+                android:text="Выберите сотрудника"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginRight="8dp"
+                android:scaleX="1.5"
+                android:scaleY="1.5"
+                android:src="?android:attr/fingerprintAuthDrawable" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.hanks.passcodeview.PasscodeView
+            android:id="@+id/passcodeView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="8dp"
+            android:background="@color/primaryDarkColor"
+            app:correctStateColor="#71bb4d"
+            app:firstInputTip="Введите Пин код"
+            app:normalStateColor="#ffffff"
+            app:numberTextColor="#222222"
+            app:passcodeLength="4"
+            app:passcodeViewType="check_passcode"
+            app:wrongStateColor="#ea2b46" />
+
+
+    </LinearLayout>
+
+</FrameLayout>

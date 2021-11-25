@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.EmployeeFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cvHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="5dp"
+            android:theme="@style/Theme.MaterialComponents.DayNight"
+            app:cardBackgroundColor="@color/primaryDarkColor"
+            app:contentPaddingBottom="4dp"
+            app:contentPaddingRight="8dp"
+            app:contentPaddingTop="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:strokeWidth="2dp">
+
+            <TextView
+                android:id="@+id/tvCustomerHeaderText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:text="@string/create_customer"
+                android:textColor="@color/primaryTextColor"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="8dp"
+                android:backgroundTint="@color/white"
+                app:cardCornerRadius="25dp"
+                app:contentPadding="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scaleX="1"
+                    android:scaleY="1"
+                    android:src="@drawable/ic_baseline_person_add_24" />
+            </androidx.cardview.widget.CardView>
+
+            <ImageView
+                android:id="@+id/exitImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|right"
+                android:contentDescription="TODO"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@android:drawable/ic_menu_revert" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    app:cardBackgroundColor="@color/ic_exit_background"
+                    app:cardCornerRadius="8dp"
+                    app:contentPaddingBottom="24dp"
+                    app:contentPaddingLeft="4dp"
+                    app:contentPaddingRight="4dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/imageView3"
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:layout_weight="1"
+                                android:src="@drawable/ic_avatar" />
+
+                            <TextView
+                                android:id="@+id/textView6"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight="10"
+                                android:text="@string/customer_data"
+                                android:textAlignment="center"
+                                android:textColor="@color/black"
+                                android:textSize="24sp" />
+
+                            <ImageButton
+                                android:id="@+id/editButton"
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/bg_circle"
+                                android:src="@drawable/ic_edit_day_night"
+                                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:id="@+id/divider"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="?android:attr/listDivider" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/customerName"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_horizontal"
+                            android:textColorHint="@color/secondaryTextColor"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/inputCustomerName"
+                                android:layout_width="match_parent"
+                                android:layout_height="48dp"
+                                android:backgroundTint="@color/secondaryTextColor"
+                                android:hint="@string/enter_name"
+                                android:inputType="textAutoComplete"
+                                android:maxLength="15"
+                                android:selectAllOnFocus="true"
+                                android:singleLine="true"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                                android:textColor="@color/black"
+                                android:textColorHighlight="@color/color_accent"
+                                android:textColorHint="@color/secondaryTextColor"
+                                android:textColorLink="@color/color_accent"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/customerFam"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_horizontal"
+                            android:textColorHint="@color/secondaryTextColor"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/inputCustomerFam"
+                                android:layout_width="match_parent"
+                                android:layout_height="48dp"
+                                android:backgroundTint="@color/secondaryTextColor"
+                                android:hint="@string/enter_fam"
+                                android:inputType="text"
+                                android:maxLength="15"
+                                android:selectAllOnFocus="true"
+                                android:singleLine="true"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                                android:textColor="@color/black"
+                                android:textColorHighlight="@color/color_accent"
+                                android:textColorHint="@color/secondaryTextColor"
+                                android:textColorLink="@color/color_accent"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/customerPhone"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_horizontal"
+                            android:textColorHint="@color/secondaryTextColor"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/inputCustomerPhone"
+                                android:layout_width="match_parent"
+                                android:layout_height="48dp"
+                                android:backgroundTint="@color/secondaryTextColor"
+                                android:hint="@string/enter_phone"
+                                android:inputType="phone"
+                                android:maxLength="15"
+                                android:selectAllOnFocus="true"
+                                android:singleLine="true"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                                android:textColor="@color/black"
+                                android:textColorHighlight="@color/color_accent"
+                                android:textColorHint="@color/secondaryTextColor"
+                                android:textColorLink="@color/color_accent"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/customerLogin"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_horizontal"
+                            android:textColorHint="@color/secondaryTextColor"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/inputCustomerLogin"
+                                android:layout_width="match_parent"
+                                android:layout_height="48dp"
+                                android:backgroundTint="@color/secondaryTextColor"
+                                android:hint="@string/enter_login"
+                                android:inputType="text"
+                                android:maxLength="15"
+                                android:selectAllOnFocus="true"
+                                android:singleLine="true"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                                android:textColor="@color/black"
+                                android:textColorHighlight="@color/color_accent"
+                                android:textColorHint="@color/secondaryTextColor"
+                                android:textColorLink="@color/color_accent"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/customerPIN"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColorHint="@color/secondaryTextColor"
+                            app:passwordToggleEnabled="true"
+                            app:passwordToggleTint="@color/secondaryTextColor">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/inputCustomerPIN"
+                                android:layout_width="match_parent"
+                                android:layout_height="48dp"
+                                android:backgroundTint="@color/secondaryTextColor"
+                                android:foregroundTint="@color/secondaryTextColor"
+                                android:hint="@string/enter_pin"
+                                android:inputType="numberPassword"
+                                android:singleLine="true"
+                                android:textColor="@color/black"
+                                android:textColorHighlight="@color/color_accent"
+                                android:textColorHint="@color/secondaryTextColor"
+                                android:textColorLink="@color/color_accent"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/customerDPIN"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColorHint="@color/secondaryTextColor"
+                            app:passwordToggleEnabled="true"
+                            app:passwordToggleTint="@color/secondaryTextColor">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/inputCustomerDPIN"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:backgroundTint="@color/secondaryTextColor"
+                                android:hint="@string/enter_dpin"
+                                android:inputType="numberPassword"
+                                android:singleLine="true"
+                                android:textColor="@color/black"
+                                android:textColorHighlight="@color/color_accent"
+                                android:textColorHint="@color/secondaryTextColor"
+                                android:textColorLink="@color/color_accent"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cvChangeTerminal"
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:layout_marginTop="8dp"
+                            android:theme="@style/Theme.MaterialComponents.DayNight"
+                            app:cardCornerRadius="15dp"
+                            app:strokeColor="@color/primaryDarkColor"
+                            app:strokeWidth="2dp">
+
+                            <TextView
+                                android:id="@+id/tvTerminalsCounter"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center|right"
+                                android:layout_marginEnd="16dp"
+                                android:text=">"
+                                android:textSize="24sp"
+                                android:textStyle="bold" />
+
+                            <ImageView
+                                android:id="@+id/ivTerminal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="15dp"
+                                android:scaleX="1.5"
+                                android:scaleY="1.5"
+                                android:src="@drawable/ic_baseline_mobile_friendly_24" />
+
+                            <TextView
+                                android:id="@+id/TerminalText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="50dp"
+                                android:layout_marginTop="10dp"
+                                android:text="QR-терминал"
+                                android:gravity="center_vertical"
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
+                            <TextView
+                                android:id="@+id/tvTerminalText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="bottom|center_horizontal"
+                                android:layout_marginBottom="4dp"
+                                android:textColor="@color/primaryLightColor"
+                                android:textStyle="bold" />
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cvChangeDepartment"
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:layout_marginTop="8dp"
+                            android:theme="@style/Theme.MaterialComponents.DayNight"
+                            app:cardCornerRadius="15dp"
+                            app:strokeColor="@color/primaryDarkColor"
+                            app:strokeWidth="2dp">
+
+                        <TextView
+                            android:id="@+id/tvDepartmentsCounter"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center|right"
+                            android:layout_marginEnd="16dp"
+                            android:text=">"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/ivDepartment"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="15dp"
+                            android:scaleX="1.5"
+                            android:scaleY="1.5"
+                            android:src="@drawable/ic_baseline_holiday_village_24" />
+
+                        <TextView
+                            android:id="@+id/DepartmentText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="50dp"
+                            android:layout_marginTop="10dp"
+                            android:gravity="center_vertical"
+                            android:text="Подразделение"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cvChangeRole"
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:layout_marginTop="8dp"
+                            android:theme="@style/Theme.MaterialComponents.DayNight"
+                            app:cardCornerRadius="15dp"
+                            app:strokeColor="@color/primaryDarkColor"
+                            app:strokeWidth="2dp">
+
+                            <TextView
+                                android:id="@+id/tvRole"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center|right"
+                                android:layout_marginEnd="16dp"
+                                android:text=">"
+                                android:textSize="24sp"
+                                android:textStyle="bold" />
+
+                            <ImageView
+                                android:id="@+id/ivRole"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="15dp"
+                                android:scaleX="1.5"
+                                android:scaleY="1.5"
+                                android:src="@drawable/ic_baseline_reduce_capacity_24" />
+
+                            <TextView
+                                android:id="@+id/RoleText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="50dp"
+                                android:layout_marginTop="10dp"
+                                android:gravity="center_vertical"
+                                android:text="Выбрать роль"
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tvRolesText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="bottom|center_horizontal"
+                                android:layout_marginBottom="4dp"
+                                android:textColor="@color/primaryLightColor"
+                                android:textStyle="bold" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</FrameLayout>

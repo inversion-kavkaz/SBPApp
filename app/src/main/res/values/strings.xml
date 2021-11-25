@@ -1,0 +1,91 @@
+<resources>
+
+    <string-array name="bankName">
+        <item>Сбер банк</item>
+        <item>Другой банк</item>
+        <item>Третий банк</item>
+        <item>Лишний банк</item>
+    </string-array>
+
+    <string-array name="serviceName">
+        <item>Торгово закупочная</item>
+        <item>Консультационные услуги</item>
+        <item>Логистические услуги</item>
+        <item>Разное</item>
+    </string-array>
+
+    <string name="PAY_DATE">Дата платежа: %s</string>
+    <string name="PAY_SUM">= %s</string>
+    <string name="TRN_NUM">Номер заказа: %s</string>
+    <string name="n_qr">Создать\nQR-код</string>
+    <string name="ph">История\nплатежей</string>
+    <string name="PAY_SUM_TEXT">Сумма поступлений:</string>
+    <string name="fiskal_text">Сканируя QR-код, вы соглашаетесь с тем, что фискальный чек будет доступен вам в электронном виде.</string>
+    <string name="order_text">Заказ %s</string>
+    <string name="paySum">Сумма к оплате</string>
+    <string name="paySumNum">%s руб.</string>
+    <string name="payWaiting">Ожидаем результат платежа</string>
+
+
+    <!--    FirstEnterFragment-->
+    <string name="app_name">Система быстрых платежей</string>
+    <string name="no_accaunts">  На данном устройстве не зарегистрирован ни один аккаунт выберите действие пожалуйста.</string>
+    <string name="request_accaunts_text">
+        С данного устройства %s был осуществлен запрос на регистацию предприятия.\n
+        Регистрационный номер заявки %s.\n
+        Вы можете повторно запросить статус заявки.
+    </string>
+    <string name="request_accaunts_status_in_process_text">
+        Запрос номер %s находится в стадии рассмотрения заявки.\n
+        Вы можете повторно запросить статус заявки.
+    </string>
+    <string name="request_accaunts_status_is_created_text">
+        Запрос номер %s подтвержден. Вы можете войти в свой аккаунт. Введите ОГРН предприятия и пароль из СМС.
+    </string>
+    <string name="register_new_accaunt_button_text">Зарегистрировать новый аккаунт</string>
+    <string name="reRegister_new_accaunt_button_text">Запросить результат регистрации</string>
+    <string name="enter_in_accaunt_button_text">Войти в существующий аккаунт</string>
+    <string name="sbp_logo">sbp_logo</string>
+
+    <!--    RegisterOGRNFragment-->
+    <string name="register_new_customer_fragment">Регистрация нового клиента</string>
+    <string name="register_help_text">Для регистрации нового клиента в системе, достаточно ввести его ОГРН</string>
+    <string name="OGRN_text">Введите ОГРН организации или ИП</string>
+    <string name="request_new_customer">Запросить регистрацию нового клиента</string>
+    <string name="request_new_customer_org">Запросить регистрацию нового ЮЛ</string>
+    <string name="request_new_customer_ip">Запросить регистрацию нового ИП</string>
+    <string name="request_new_customer_wait">Ожидаем ответ...</string>
+    <string name="request_new_responce">Заявка на подключение организации с ОГРН %s принята.
+        Ожидайте получения уведомления о результате рассмотрения заявки.</string>
+
+    <!-- FirstPinEnteredFragment -->
+    <string name="hello_blank_fragment">Для входа в приложение введите ОГРН предприятия и полученный в СМС код.</string>
+    <string name="input_pin_text">Введите код из СМС</string>
+    <string name="enter">Войти</string>
+    <!--    PinFragment-->
+    <string name="PinFragment_text">PIN fragment</string>
+    <!--    MainFragment-->
+    <string name="MainFragment_text">Это основной экран приложения после всех регистраций. Осталось зарегать только счет предприятия.</string>
+    <!--    CustomerInfoFragment-->
+    <string name="customer_info">Информация о предприятии</string>
+    <string name="AccRegisterText">К данному предприятию не привязан счет для работы в системе СБП. Произведите регистрацию счета.</string>
+    <string name="enter_acc">Введите счет предприятия</string>
+    <string name="request_acc">Зарегистрировать счет</string>
+    <string name="acc_registered_success">Счет %s успешно зарегистрирован</string>
+    <!--    EmployeeFragment-->
+    <string name="create_customer">Создание сотрудника</string>
+    <string name="update_customer">Редактирование сотрудника</string>
+    <string name="enter_name">Имя</string>
+    <string name="enter_fam">Фамилия</string>
+    <string name="enter_login">Логин</string>
+    <string name="enter_phone">Телефон</string>
+    <string name="enter_pin">PIN</string>
+    <string name="enter_dpin">Подтвердите PIN</string>
+    <string name="customer_data">Данные сотрудника</string>
+    <string name="change_department">Выберите точку продаж</string>
+    <string name="change_terminal">Выберите QR-терминал</string>
+    <string name="save_employee">Сохранить</string>
+    <string name="back_charester"><![CDATA[<]]></string>
+
+
+</resources>
