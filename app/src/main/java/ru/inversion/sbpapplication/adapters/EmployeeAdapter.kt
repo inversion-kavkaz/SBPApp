@@ -3,8 +3,11 @@ package ru.inversion.sbpapplication.adapters
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.item_employee_info.view.*
+import ru.inversion.sbpapplication.MainActivity
 import ru.inversion.sbpapplication.R
 import ru.inversion.sbpapplication.fragments.EmployeeListFragment
 import ru.inversion.sbpapplication.pojo.Employee
@@ -26,11 +29,17 @@ class EmployeeAdapter(private val context: EmployeeListFragment) :
     }
 
     override fun onBindViewHolder(holder: EmployeeViewHolder, position: Int) {
-        val trn = employeeList[position]
+        val empl = employeeList[position]
         with(holder) {
-            with(trn) {
+            with(empl) {
                 tvEName.text = "$firstName $secondName"
                 tvEmployeeRole.text = permissionList[permissionGroupName]
+                delBut.setOnClickListener {
+                    MainActivity.viewModel.deleteEmployee(this)
+                }
+                constraynt.setOnClickListener {
+                    context.findNavController().navigate(R.id.action_employeeListFragment_to_employeeFragment, bundleOf("employee" to this))
+                }
             }
         }
     }
@@ -40,6 +49,8 @@ class EmployeeAdapter(private val context: EmployeeListFragment) :
     inner class EmployeeViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val tvEName = itemView.tvEmployeeName
         val tvEmployeeRole = itemView.tvEmployeeRole
+        val delBut = itemView.delButton
+        val constraynt = itemView.constraintLayout
     }
 
 }

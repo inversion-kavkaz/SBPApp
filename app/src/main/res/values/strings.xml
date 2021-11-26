@@ -17,8 +17,8 @@
     <string name="PAY_DATE">Дата платежа: %s</string>
     <string name="PAY_SUM">= %s</string>
     <string name="TRN_NUM">Номер заказа: %s</string>
-    <string name="n_qr">Создать\nQR-код</string>
-    <string name="ph">История\nплатежей</string>
+    <string name="n_qr">Создать QR-код</string>
+    <string name="ph">История платежей</string>
     <string name="PAY_SUM_TEXT">Сумма поступлений:</string>
     <string name="fiskal_text">Сканируя QR-код, вы соглашаетесь с тем, что фискальный чек будет доступен вам в электронном виде.</string>
     <string name="order_text">Заказ %s</string>

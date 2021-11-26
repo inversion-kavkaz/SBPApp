@@ -1,14 +1,10 @@
 package ru.inversion.sbpapplication.database
 
 import androidx.lifecycle.LiveData
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
 import io.reactivex.rxjava3.core.Single
-import ru.inversion.sbpapplication.pojo.Customer
 import ru.inversion.sbpapplication.pojo.Employee
-import ru.inversion.sbpapplication.pojo.ResponseResult
+
 
 @Dao
 interface EmployeeDao {
@@ -29,6 +25,10 @@ interface EmployeeDao {
 
     @Query("SELECT * FROM employee where id = :id")
     fun getEmployeeById(id: Long): Single<Employee>
+
+    @Delete
+    fun delete(employee: Employee?) : Single<Unit>
+
 
 
 

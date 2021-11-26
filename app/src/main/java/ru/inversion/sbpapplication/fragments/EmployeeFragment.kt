@@ -94,7 +94,7 @@ class EmployeeFragment : Fragment() {
         if (viewModel.retData["merchantID"] != null) {
             employeeTerminal = viewModel.retData["merchantID"] as Terminal
             binding?.tvTerminalText?.text = "Банк:${employeeTerminal?.bankId} Мерчант: ${employeeTerminal?.merchantId}"
-        }
+        } else if(employee == null) rolesListForDb ="MERCHANT"
 
         employee?.let {
             with(it) {
@@ -167,7 +167,7 @@ class EmployeeFragment : Fragment() {
             phone = binding?.inputCustomerPhone?.text?.trim().toString(),
             login = binding?.inputCustomerLogin?.text?.trim().toString(),
             permissionGroupName = if(rolesListForDb.isEmpty()) employee?.permissionGroupName else rolesListForDb,
-            isChanged = if(isCreate || binding?.inputCustomerPIN?.text.toString().isEmpty() && (employee != null && employee?.isChanged!! < 1)) 0 else 1,
+            isChanged = if(employee != null && !binding?.inputCustomerPIN?.text.toString().isEmpty()) 1 else 0,
             terminalId = terminalID,
             pinCode = if(binding?.inputCustomerPIN?.text?.trim().toString().isEmpty())
                 employee?.pinCode?.trim().toString()

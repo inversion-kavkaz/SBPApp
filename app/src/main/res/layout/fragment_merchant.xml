@@ -29,6 +29,16 @@
             app:layout_constraintTop_toTopOf="parent"
             app:strokeWidth="2dp">
 
+            <ImageView
+                android:id="@+id/ivAlarm"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_gravity="bottom"
+                android:layout_marginStart="40dp"
+                android:layout_marginBottom="5dp"
+                android:elevation="5dp"
+                app:srcCompat="@drawable/bg_circle_red" />
+
             <TextView
                 android:id="@+id/tvCustomerHeaderText"
                 android:layout_width="wrap_content"
@@ -41,12 +51,12 @@
                 android:textStyle="bold" />
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/cardView"
+                android:id="@+id/cvEmployeeProfile"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_gravity="center|start"
                 android:layout_marginStart="8dp"
-                android:backgroundTint="@color/white"
+                android:background="@drawable/ic_avatar"
                 app:cardCornerRadius="20dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
@@ -79,9 +89,9 @@
             android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:baselineAligned="false"
             android:orientation="horizontal"
-            android:padding="5dp"
-            android:baselineAligned="false">
+            android:padding="5dp">
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cvCreateQR"
@@ -106,20 +116,20 @@
 
                     <ImageView
                         android:id="@+id/img"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
                         android:contentDescription="TODO"
                         android:src="@drawable/ic_baseline_qr_code_24" />
 
                     <TextView
                         android:id="@+id/textView2"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:gravity="center"
                         android:text="@string/n_qr"
                         android:textColor="@color/white"
-                        android:textSize="24sp" />
+                        android:textSize="20sp" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -146,8 +156,8 @@
 
                     <ImageView
                         android:id="@+id/img1"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
                         android:contentDescription="TODO"
                         android:src="@drawable/ic_baseline_plagiarism_24" />
 
@@ -159,7 +169,7 @@
                         android:gravity="center"
                         android:text="@string/ph"
                         android:textColor="@color/white"
-                        android:textSize="24sp" />
+                        android:textSize="20sp" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -177,17 +187,30 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
+                <ImageView
+                    android:id="@+id/imageView7"
+                    android:layout_width="40dp"
+                    android:layout_height="25dp"
+                    android:scaleX="3"
+                    android:scaleY="3"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@mipmap/ic_sbp_icon" />
+
                 <TextView
                     android:id="@+id/tvPaySumText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
                     android:text="@string/PAY_SUM_TEXT"
                     android:textColor="@color/black"
                     android:textSize="16sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintStart_toEndOf="@+id/imageView7"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
 
                 <TextView
                     android:id="@+id/tvPaySumNumber"

@@ -52,7 +52,12 @@ class ConnectTerminalFragmen : Fragment() {
             findNavController().popBackStack()
         }
         binding?.btNext?.setOnClickListener {
-            MainActivity.viewModel.retData.put("merchantID",Terminal(bankId = 256987, merchantId = binding?.inputMerchantID?.text.toString().toLong()))
+            MainActivity.viewModel.retData.put("merchantID",Terminal(
+                bankId = 256987,
+                merchantId = if (binding?.inputMerchantID?.text.toString().isNullOrEmpty() == false)
+                                    binding?.inputMerchantID?.text.toString().toLong()
+                                else 0
+            ))
             findNavController().popBackStack()
         }
 

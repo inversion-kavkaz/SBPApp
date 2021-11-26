@@ -57,6 +57,12 @@ class MainViewModel(application: Application): AndroidViewModel(application) {
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
     }
+    fun deleteEmployee(employee: Employee){
+        db.employeeDao().delete(employee)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe({},{})
+    }
 
     /**-------------------------------------------------------------------------------------------*/
     fun clearResponseTable(){

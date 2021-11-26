@@ -2,12 +2,12 @@ package ru.inversion.sbpapplication.fragments
 
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import androidx.core.os.bundleOf
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.LiveData
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
@@ -17,6 +17,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import ru.inversion.sbpapplication.MainActivity
+import ru.inversion.sbpapplication.MainActivity.Companion.viewModel
 import ru.inversion.sbpapplication.R
 import ru.inversion.sbpapplication.adapters.TrnInfoAdapter
 import ru.inversion.sbpapplication.api.ApiFactory
@@ -66,19 +67,39 @@ class MerchantFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        employee?.id?.let { viewModel.getEmployeeById(it).subscribe({
+            employee = it
+            inittialize()
+            },{}) }
+    }
+
+    private fun inittialize() {
         binding?.tvProgressBar?.visibility = View.GONE
         setEmployeeText()
+
         binding?.exitImage?.setOnClickListener {
             findNavController().popBackStack()
         }
 
         binding?.qrButton?.setOnClickListener {
-            findNavController().navigate(R.id.action_merchantFragment_to_createQRFragment, bundleOf("employee" to employee, "customer" to customer))
+            findNavController().navigate(
+                R.id.action_merchantFragment_to_createQRFragment,
+                bundleOf("employee" to employee, "customer" to customer)
+            )
         }
 
-        MainActivity.viewModel.getTrnSum().observe(this, {
-                binding?.tvPaySumNumber?.text = it.toString()
-            })
+        viewModel.getTrnSum().observe(this, {
+            binding?.tvPaySumNumber?.text = it.toString()
+        })
+
+        binding?.cvEmployeeProfile?.setOnClickListener {
+            findNavController().navigate(
+                R.id.action_merchantFragment_to_employeeFragment,
+                bundleOf("employee" to employee)
+            )
+        }
+
+            binding?.ivAlarm?.visibility = if(employee?.isChanged != null && employee?.isChanged!! < 1) View.VISIBLE else View.GONE
     }
 
     private fun setEmployeeText() {
