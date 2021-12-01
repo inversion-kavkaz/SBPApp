@@ -18,7 +18,7 @@
             android:layout_height="60dp"
             android:paddingBottom="5dp"
             android:theme="@style/Theme.MaterialComponents.DayNight"
-            app:cardBackgroundColor="@color/primaryDarkColor"
+            app:cardBackgroundColor="@color/primaryColor"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -63,11 +63,11 @@
                 android:layout_height="30dp"
                 android:layout_gravity="center|right"
                 android:layout_marginRight="16dp"
-                android:background="@drawable/btn_round_bg"
+
                 android:contentDescription="TODO"
                 android:scaleX="1.5"
                 android:scaleY="1.5"
-                android:src="@drawable/ic_baseline_home_24"
+                android:src="@drawable/ic_baseline_home_16"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />

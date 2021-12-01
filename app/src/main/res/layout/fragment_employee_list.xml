@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             android:paddingBottom="5dp"
             android:theme="@style/Theme.MaterialComponents.DayNight"
-            app:cardBackgroundColor="@color/primaryDarkColor"
+            app:cardBackgroundColor="@color/primaryColor"
             app:contentPaddingBottom="4dp"
             app:contentPaddingRight="8dp"
             app:contentPaddingTop="4dp"

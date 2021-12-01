@@ -17,6 +17,7 @@ import ru.inversion.sbpapplication.MainActivity.Companion.viewModel
 import ru.inversion.sbpapplication.databinding.FragmentPinBinding
 import ru.inversion.sbpapplication.fragments.dialog.EmployeeDialog
 import ru.inversion.sbpapplication.pojo.Employee
+import kotlin.concurrent.fixedRateTimer
 
 
 class PinFragment : Fragment() {
@@ -46,8 +47,6 @@ class PinFragment : Fragment() {
                 }
             })
         var employeeDialog: EmployeeDialog? = null
-        var transition: FragmentTransaction? = null
-
 
         viewModel.getEmployeeList()
             .observe(this, {
@@ -57,15 +56,13 @@ class PinFragment : Fragment() {
                 }
                 employeeDialog = EmployeeDialog()
                 employeeDialog?.employeeNames = it
-                val manager: FragmentManager = childFragmentManager
-                transition = manager.beginTransaction()
                 employeeDialog?.okClicked(Consumer {
                     initPinCode(it)
                 })
             })
 
         binding?.cvChangeEmployee?.setOnClickListener {
-            transition?.let { it1 -> employeeDialog?.show(it1, "dialog") }
+            employeeDialog?.show(childFragmentManager, EmployeeDialog.TAG)
         }
     }
 

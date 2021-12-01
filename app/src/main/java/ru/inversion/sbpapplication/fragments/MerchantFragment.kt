@@ -89,6 +89,8 @@ class MerchantFragment : Fragment() {
         }
 
         viewModel.getTrnSum().observe(this, {
+            if(it == null) binding?.tvPaySumNumber?.text = "0.00"
+            else
             binding?.tvPaySumNumber?.text = it.toString()
         })
 
@@ -99,7 +101,7 @@ class MerchantFragment : Fragment() {
             )
         }
 
-            binding?.ivAlarm?.visibility = if(employee?.isChanged != null && employee?.isChanged!! < 1) View.VISIBLE else View.GONE
+            //binding?.ivAlarm?.visibility = if(employee?.isChanged != null && employee?.isChanged!! < 1) View.VISIBLE else View.GONE
     }
 
     private fun setEmployeeText() {

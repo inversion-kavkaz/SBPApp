@@ -21,23 +21,11 @@
             android:id="@+id/cvHeader"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="5dp"
             android:theme="@style/Theme.MaterialComponents.DayNight"
-            app:cardBackgroundColor="@color/primaryDarkColor"
+            app:cardBackgroundColor="@color/primaryColor"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:strokeWidth="2dp">
-
-            <ImageView
-                android:id="@+id/ivAlarm"
-                android:layout_width="10dp"
-                android:layout_height="10dp"
-                android:layout_gravity="bottom"
-                android:layout_marginStart="40dp"
-                android:layout_marginBottom="5dp"
-                android:elevation="5dp"
-                app:srcCompat="@drawable/bg_circle_red" />
+            app:layout_constraintTop_toTopOf="parent">
 
             <TextView
                 android:id="@+id/tvCustomerHeaderText"
@@ -75,13 +63,10 @@
             <ImageView
                 android:id="@+id/exitImage"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="48dp"
                 android:layout_gravity="center|right"
-                android:contentDescription="TODO"
-                android:src="@mipmap/ic_exit_round"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+
+                android:src="@mipmap/ic_exit" />
 
         </com.google.android.material.card.MaterialCardView>
 
@@ -89,9 +74,9 @@
             android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:baselineAligned="false"
-            android:orientation="horizontal"
-            android:padding="5dp">
+            android:orientation="horizontal">
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cvCreateQR"
@@ -107,12 +92,11 @@
                     android:layout_height="match_parent"
                     android:layout_marginEnd="2dp"
                     android:layout_weight="1"
-                    android:background="@color/primaryDarkColor"
+                    android:background="@color/primaryColor"
                     android:clickable="true"
                     android:focusable="true"
                     android:gravity="center"
-                    android:orientation="vertical"
-                    android:padding="5dp">
+                    android:orientation="vertical">
 
                     <ImageView
                         android:id="@+id/img"
@@ -147,12 +131,11 @@
                     android:layout_height="match_parent"
                     android:layout_marginStart="2dp"
                     android:layout_weight="1"
-                    android:background="@color/primaryDarkColor"
+                    android:background="@color/primaryColor"
                     android:clickable="true"
                     android:focusable="true"
                     android:gravity="center"
-                    android:orientation="vertical"
-                    android:padding="5dp">
+                    android:orientation="vertical">
 
                     <ImageView
                         android:id="@+id/img1"
@@ -178,7 +161,7 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="4dp"
+            android:layout_marginTop="4dp"
             app:cardBackgroundColor="@color/ic_sbp_background"
             app:cardUseCompatPadding="true"
             app:contentPadding="8dp">

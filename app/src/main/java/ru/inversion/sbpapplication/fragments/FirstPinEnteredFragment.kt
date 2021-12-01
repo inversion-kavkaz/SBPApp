@@ -38,7 +38,7 @@ class FirstPinEnteredFragment : Fragment() {
 
         binding.btSignIn2.setOnClickListener{
             /**Берем логин пароль и отправляем на сервер для проверки
-             * Если косячные извиняемся и говорим пошел нахуй!
+             * Если косячные извиняемся и выводим ошибку!!!
              * Если норм то входим на основную страницу*/
             if(binding.itInputOGRN.text.toString() == tempOGRN && binding.itInputPIN.text.toString() == tempPIN){
                 findNavController().navigate(R.id.action_firstPinEnteredFragment_to_mainFragment)
