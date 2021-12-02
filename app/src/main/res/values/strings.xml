@@ -1,10 +1,8 @@
 <resources>
 
     <string-array name="bankName">
-        <item>Сбер банк</item>
-        <item>Другой банк</item>
-        <item>Третий банк</item>
-        <item>Лишний банк</item>
+        <item>ЧБРР банк</item>
+        <item>ПСБ банк</item>
     </string-array>
 
     <string-array name="serviceName">

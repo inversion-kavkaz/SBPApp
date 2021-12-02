@@ -86,7 +86,7 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="16dp"
                     android:layout_marginEnd="16dp"
-                    app:cardBackgroundColor="@color/ic_exit_background"
+                    app:cardBackgroundColor="@color/ic_sbp_background"
                     app:cardCornerRadius="8dp"
                     app:contentPaddingBottom="24dp"
                     app:contentPaddingLeft="4dp"
@@ -125,10 +125,10 @@
                                 android:id="@+id/editButton"
                                 android:layout_width="48dp"
                                 android:layout_height="48dp"
-                                android:layout_weight="1"
-                                android:background="@drawable/bg_circle"
+                                android:layout_weight="0"
+                                android:background="@color/ic_sbp_background"
                                 android:src="@drawable/ic_edit_day_night"
-                                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+                                tools:ignore="SpeakableTextPresentCheck" />
 
                         </LinearLayout>
 
@@ -336,10 +336,11 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="50dp"
                                 android:layout_marginTop="10dp"
-                                android:text="QR-терминал"
                                 android:gravity="center_vertical"
+                                android:text="QR-терминал"
                                 android:textSize="20sp"
                                 android:textStyle="bold" />
+
                             <TextView
                                 android:id="@+id/tvTerminalText"
                                 android:layout_width="wrap_content"
@@ -361,36 +362,36 @@
                             app:strokeColor="@color/primaryDarkColor"
                             app:strokeWidth="2dp">
 
-                        <TextView
-                            android:id="@+id/tvDepartmentsCounter"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center|right"
-                            android:layout_marginEnd="16dp"
-                            android:text=">"
-                            android:textSize="24sp"
-                            android:textStyle="bold" />
+                            <TextView
+                                android:id="@+id/tvDepartmentsCounter"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center|right"
+                                android:layout_marginEnd="16dp"
+                                android:text=">"
+                                android:textSize="24sp"
+                                android:textStyle="bold" />
 
-                        <ImageView
-                            android:id="@+id/ivDepartment"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginTop="15dp"
-                            android:scaleX="1.5"
-                            android:scaleY="1.5"
-                            android:src="@drawable/ic_baseline_holiday_village_24" />
+                            <ImageView
+                                android:id="@+id/ivDepartment"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="15dp"
+                                android:scaleX="1.5"
+                                android:scaleY="1.5"
+                                android:src="@drawable/ic_baseline_holiday_village_24" />
 
-                        <TextView
-                            android:id="@+id/DepartmentText"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="50dp"
-                            android:layout_marginTop="10dp"
-                            android:gravity="center_vertical"
-                            android:text="Подразделение"
-                            android:textSize="20sp"
-                            android:textStyle="bold" />
+                            <TextView
+                                android:id="@+id/DepartmentText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="50dp"
+                                android:layout_marginTop="10dp"
+                                android:gravity="center_vertical"
+                                android:text="Подразделение"
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
                         </com.google.android.material.card.MaterialCardView>
 
                         <com.google.android.material.card.MaterialCardView

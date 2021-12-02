@@ -23,8 +23,8 @@ interface TrnInfoDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertTrn(trn: Transaction) : Single<Long>
 
-    @Query("Delete from trn_list")
-    fun deleteAllTransaction() : Single<Unit>
+    @Query("delete from trn_list")
+    fun deleteAllTransaction()
 
 
 

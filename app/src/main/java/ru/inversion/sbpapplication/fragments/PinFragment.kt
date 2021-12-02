@@ -8,8 +8,6 @@ import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentTransaction
 import androidx.navigation.fragment.findNavController
 import com.hanks.passcodeview.PasscodeView
 import io.reactivex.rxjava3.functions.Consumer
@@ -17,7 +15,6 @@ import ru.inversion.sbpapplication.MainActivity.Companion.viewModel
 import ru.inversion.sbpapplication.databinding.FragmentPinBinding
 import ru.inversion.sbpapplication.fragments.dialog.EmployeeDialog
 import ru.inversion.sbpapplication.pojo.Employee
-import kotlin.concurrent.fixedRateTimer
 
 
 class PinFragment : Fragment() {

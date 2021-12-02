@@ -88,12 +88,12 @@ class MainViewModel(application: Application): AndroidViewModel(application) {
 
 
     /**Transaction ------------------------------------------------------------------------------*/
-    fun clearTrnBD(){
-        db.trnInfoDao().deleteAllTransaction()
-            .subscribeOn(Schedulers.io())
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribe({},{})
-    }
+//    fun clearTrnBD(){
+//        db.trnInfoDao().deleteAllTransaction()
+//            .subscribeOn(Schedulers.io())
+//            .observeOn(AndroidSchedulers.mainThread())
+//            .subscribe({},{})
+//    }
 
     fun insertTransaction(transaction: Transaction) : Single<Long>{
         return db.trnInfoDao().insertTrn(transaction)

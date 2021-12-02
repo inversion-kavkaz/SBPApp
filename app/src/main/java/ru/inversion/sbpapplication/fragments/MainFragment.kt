@@ -141,13 +141,13 @@ class MainFragment : Fragment() {
             .subscribe({
                     customer = it[0]
                     if(customer?.acc.isNullOrEmpty())
-                    setMessage(binding.cvCustomer, binding.tvCustomerMessage,"Не зарегестирован счет клиента")
+                    setMessage(binding.cvCustomer, binding.tvCustomerMessage,"Не зарегистирован счет клиента")
             }, {Log.d("ERROR_OF_LOADING_CUSTOMER", it.message.toString())})
     }
 
     private fun setMessage(card: MaterialCardView,textView : TextView, message: String? ="") {
             GlobalScope.launch(Dispatchers.Main){
-                card.setStrokeColor(resources.getColor(R.color.color_accent))
+                card.strokeColor = resources.getColor(R.color.color_accent)
                 textView.setTextColor(resources.getColor(R.color.color_accent))
                 textView.text = message
         }
