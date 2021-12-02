@@ -200,8 +200,11 @@
                             android:layout_height="match_parent"
                             android:layout_gravity="center_horizontal"
                             android:textColorHint="@color/secondaryTextColor"
+                            app:endIconMode="clear_text"
+                            app:endIconTint="@color/secondaryColor"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent">
+
 
                             <com.google.android.material.textfield.TextInputEditText
                                 android:id="@+id/inputCustomerPhone"
@@ -210,7 +213,7 @@
                                 android:backgroundTint="@color/secondaryTextColor"
                                 android:hint="@string/enter_phone"
                                 android:inputType="phone"
-                                android:maxLength="15"
+                                android:maxLength="12"
                                 android:selectAllOnFocus="true"
                                 android:singleLine="true"
                                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
@@ -219,7 +222,8 @@
                                 android:textColorHint="@color/secondaryTextColor"
                                 android:textColorLink="@color/color_accent"
                                 android:textSize="16sp"
-                                android:textStyle="bold" />
+                                android:textStyle="bold"/>
+
                         </com.google.android.material.textfield.TextInputLayout>
 
                         <com.google.android.material.textfield.TextInputLayout

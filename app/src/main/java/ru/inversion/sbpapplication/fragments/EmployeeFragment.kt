@@ -1,6 +1,8 @@
 package ru.inversion.sbpapplication.fragments
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -66,7 +68,7 @@ class EmployeeFragment : Fragment() {
 
         binding?.exitImage?.setOnClickListener { findNavController().popBackStack() }
         initTerminal()
-        initViews()
+          initViews()
         setRolesDialog()
         initField(employee)
         binding?.cvChangeTerminal?.setOnClickListener {
@@ -74,6 +76,8 @@ class EmployeeFragment : Fragment() {
             viewModel.retData.remove("merchantID")
             findNavController().navigate(R.id.action_employeeFragment_to_terminalFragment, bundle)
         }
+
+
     }
 
     private fun initTerminal() {
